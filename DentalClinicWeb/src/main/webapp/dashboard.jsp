@@ -12,70 +12,33 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background: #0f0c29;
-            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            background: #1a0f0a;
+            background: linear-gradient(135deg, #1a0f0a 0%, #3d1f12 40%, #6b3a1f 70%, #8b4a28 100%);
             min-height: 100vh;
             position: relative;
             overflow-x: hidden;
         }
 
-        /* Animated Background Particles */
-        .particles {
+        /* Sunrise Glow Effects */
+        .sunrise-glow-1 {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 50%;
-            animation: floatParticle 15s infinite;
-        }
-        .particle:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
-        .particle:nth-child(2) { top: 20%; left: 85%; animation-delay: 1s; }
-        .particle:nth-child(3) { top: 60%; left: 10%; animation-delay: 2s; }
-        .particle:nth-child(4) { top: 80%; left: 75%; animation-delay: 3s; }
-        .particle:nth-child(5) { top: 40%; left: 50%; animation-delay: 4s; }
-        .particle:nth-child(6) { top: 70%; left: 30%; animation-delay: 5s; }
-        .particle:nth-child(7) { top: 30%; left: 60%; animation-delay: 6s; }
-        .particle:nth-child(8) { top: 90%; left: 45%; animation-delay: 7s; }
-        .particle:nth-child(9) { top: 50%; left: 20%; animation-delay: 8s; }
-        .particle:nth-child(10) { top: 15%; left: 40%; animation-delay: 9s; }
-
-        @keyframes floatParticle {
-            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
-            25% { transform: translateY(-40px) translateX(20px); opacity: 0.8; }
-            50% { transform: translateY(-80px) translateX(-20px); opacity: 0.2; }
-            75% { transform: translateY(-40px) translateX(30px); opacity: 0.8; }
-        }
-
-        /* Glow Effects */
-        .glow-1 {
-            position: fixed;
-            top: -150px;
-            right: -150px;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(139, 125, 166, 0.15), transparent 70%);
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 165, 0, 0.1), transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: 0;
             animation: pulseGlow 6s ease-in-out infinite;
         }
-        .glow-2 {
+        .sunrise-glow-2 {
             position: fixed;
             bottom: -150px;
             left: -150px;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(107, 93, 138, 0.12), transparent 70%);
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.08), transparent 70%);
             border-radius: 50%;
             pointer-events: none;
             z-index: 0;
@@ -86,6 +49,43 @@
             50% { transform: scale(1.2); opacity: 1; }
         }
 
+        /* Floating Sun Particles */
+        .sun-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .sun-particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: rgba(255, 200, 100, 0.12);
+            border-radius: 50%;
+            animation: floatParticle 14s infinite;
+        }
+        .sun-particle:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .sun-particle:nth-child(2) { top: 20%; left: 85%; animation-delay: 1.5s; }
+        .sun-particle:nth-child(3) { top: 60%; left: 10%; animation-delay: 3s; }
+        .sun-particle:nth-child(4) { top: 80%; left: 75%; animation-delay: 4.5s; }
+        .sun-particle:nth-child(5) { top: 40%; left: 50%; animation-delay: 6s; }
+        .sun-particle:nth-child(6) { top: 70%; left: 30%; animation-delay: 7.5s; }
+        .sun-particle:nth-child(7) { top: 30%; left: 60%; animation-delay: 9s; }
+        .sun-particle:nth-child(8) { top: 90%; left: 45%; animation-delay: 10.5s; }
+        .sun-particle:nth-child(9) { top: 50%; left: 20%; animation-delay: 12s; }
+        .sun-particle:nth-child(10) { top: 15%; left: 40%; animation-delay: 13.5s; }
+
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0) translateX(0); opacity: 0.2; }
+            25% { transform: translateY(-50px) translateX(30px); opacity: 0.8; }
+            50% { transform: translateY(-100px) translateX(-30px); opacity: 0.2; }
+            75% { transform: translateY(-50px) translateX(40px); opacity: 0.8; }
+        }
+
         .dashboard {
             position: relative;
             z-index: 1;
@@ -94,19 +94,19 @@
             padding: 30px 25px;
         }
 
-        /* Header - Glassmorphism */
+        /* Header - Glassmorphism with Sunrise Theme */
         .header {
-            background: rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.05);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,200,100,0.08);
             border-radius: 24px;
             padding: 22px 30px;
             margin-bottom: 35px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
             animation: slideDown 0.6s ease-out;
         }
         @keyframes slideDown {
@@ -121,13 +121,13 @@
         .header .brand .logo-icon {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, #8B7DA6, #6B5D8A);
+            background: linear-gradient(135deg, #f6a085, #f7c948);
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 24px;
-            box-shadow: 0 8px 25px rgba(139, 125, 166, 0.3);
+            box-shadow: 0 8px 25px rgba(246, 160, 133, 0.25);
         }
         .header .brand h1 {
             font-size: 24px;
@@ -137,11 +137,11 @@
         }
         .header .brand h1 span {
             font-weight: 300;
-            opacity: 0.6;
+            opacity: 0.5;
         }
         .header .brand .subtitle {
             font-size: 10px;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,200,100,0.3);
             letter-spacing: 2px;
             text-transform: uppercase;
             display: block;
@@ -156,14 +156,14 @@
             width: 42px;
             height: 42px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #8B7DA6, #6B5D8A);
+            background: linear-gradient(135deg, #f6a085, #f7c948);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #1a0f0a;
             font-weight: 700;
             font-size: 16px;
-            box-shadow: 0 5px 15px rgba(139, 125, 166, 0.25);
+            box-shadow: 0 5px 15px rgba(246, 160, 133, 0.2);
         }
         .header .user-section .user-name {
             color: rgba(255,255,255,0.85);
@@ -175,22 +175,23 @@
             text-decoration: none;
             padding: 8px 20px;
             border-radius: 12px;
-            background: rgba(255,255,255,0.06);
+            background: rgba(255,255,255,0.05);
             font-size: 13px;
             font-weight: 500;
             transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,200,100,0.05);
             display: flex;
             align-items: center;
             gap: 8px;
         }
         .header .user-section .logout-btn:hover {
-            background: rgba(255,255,255,0.12);
+            background: rgba(255,200,100,0.1);
             color: white;
             transform: translateY(-2px);
+            border-color: rgba(255,200,100,0.15);
         }
 
-        /* Stats Cards */
+        /* Stats Cards - Sunrise Theme */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -206,7 +207,7 @@
             background: rgba(255,255,255,0.04);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,200,100,0.06);
             border-radius: 18px;
             padding: 22px 24px;
             transition: all 0.4s ease;
@@ -220,7 +221,7 @@
             right: -50%;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(139, 125, 166, 0.08), transparent 70%);
+            background: radial-gradient(circle, rgba(246, 160, 133, 0.06), transparent 70%);
             border-radius: 50%;
             transition: 0.5s;
         }
@@ -229,7 +230,7 @@
         }
         .stat-card:hover {
             transform: translateY(-6px);
-            border-color: rgba(139, 125, 166, 0.3);
+            border-color: rgba(246, 160, 133, 0.2);
             box-shadow: 0 15px 40px rgba(0,0,0,0.2);
         }
         .stat-card .stat-icon {
@@ -251,15 +252,15 @@
         }
         .stat-card .stat-trend {
             font-size: 11px;
-            color: #48bb78;
+            color: #f6a085;
             margin-top: 6px;
             display: inline-block;
-            background: rgba(72, 187, 120, 0.15);
+            background: rgba(246, 160, 133, 0.1);
             padding: 2px 12px;
             border-radius: 20px;
         }
 
-        /* Menu Grid */
+        /* Menu Grid - Sunrise Theme */
         .menu-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -270,7 +271,7 @@
             background: rgba(255,255,255,0.04);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,200,100,0.06);
             border-radius: 20px;
             padding: 28px 24px;
             text-decoration: none;
@@ -287,7 +288,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(139, 125, 166, 0.05), rgba(107, 93, 138, 0.05));
+            background: linear-gradient(135deg, rgba(246, 160, 133, 0.05), rgba(247, 201, 72, 0.05));
             opacity: 0;
             transition: 0.4s;
         }
@@ -301,7 +302,7 @@
             left: 0;
             width: 0%;
             height: 3px;
-            background: linear-gradient(90deg, #8B7DA6, #6B5D8A);
+            background: linear-gradient(90deg, #f6a085, #f7c948);
             transition: 0.4s;
         }
         .menu-card:hover::after {
@@ -309,7 +310,7 @@
         }
         .menu-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(139, 125, 166, 0.2);
+            border-color: rgba(246, 160, 133, 0.15);
             box-shadow: 0 20px 50px rgba(0,0,0,0.3);
         }
         .menu-card .card-icon {
@@ -329,7 +330,7 @@
         }
         .menu-card p {
             font-size: 13px;
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.35);
             margin-bottom: 12px;
         }
         .menu-card .arrow {
@@ -339,7 +340,7 @@
             display: inline-block;
         }
         .menu-card:hover .arrow {
-            color: #8B7DA6;
+            color: #f6a085;
             transform: translateX(5px);
         }
         .menu-card .card-number {
@@ -347,15 +348,15 @@
             top: 12px;
             right: 16px;
             font-size: 11px;
-            color: rgba(255,255,255,0.08);
+            color: rgba(255,200,100,0.06);
             font-weight: 800;
         }
 
         .menu-card.exit-card {
-            border-color: rgba(229, 62, 62, 0.15);
+            border-color: rgba(229, 62, 62, 0.1);
         }
         .menu-card.exit-card:hover {
-            border-color: rgba(229, 62, 62, 0.3);
+            border-color: rgba(229, 62, 62, 0.2);
         }
         .menu-card.exit-card .card-icon {
             color: #fc8181;
@@ -409,21 +410,23 @@
 </head>
 <body>
 
-    <!-- Background Particles -->
-    <div class="particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
+    <!-- Sunrise Glows -->
+    <div class="sunrise-glow-1"></div>
+    <div class="sunrise-glow-2"></div>
+
+    <!-- Floating Sun Particles -->
+    <div class="sun-particles">
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
+        <div class="sun-particle"></div>
     </div>
-    <div class="glow-1"></div>
-    <div class="glow-2"></div>
 
     <div class="dashboard">
         <!-- Header -->
@@ -460,7 +463,7 @@
                 <span class="stat-icon">💰</span>
                 <div class="stat-number">$0</div>
                 <div class="stat-label">Revenue Today</div>
-                <span class="stat-trend" style="color:#f6ad55;">+0% this month</span>
+                <span class="stat-trend" style="color:#f7c948;">+0% this month</span>
             </div>
             <div class="stat-card">
                 <span class="stat-icon">🦷</span>
